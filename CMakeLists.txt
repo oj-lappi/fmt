@@ -9,9 +9,11 @@ endif ()
 # or if it is the master project.
 if (NOT DEFINED FMT_MASTER_PROJECT)
   set(FMT_MASTER_PROJECT OFF)
+  message("FMT_MASTER_PROJECT not defined")
   # NOTE: source vs current_source detection is unreliable
   # this heuristic is more generally applicable esp w.r.t FetchContent
   if (NOT DEFINED PROJECT_NAME)
+    message("Setting FMT_MASTER_PROJECT=ON")
     set(FMT_MASTER_PROJECT ON)
     message(STATUS "CMake version: ${CMAKE_VERSION}")
   endif ()
